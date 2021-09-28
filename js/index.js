@@ -38,5 +38,130 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// const nav = document.querySelector('nav');
+// const navLogo = document.querySelector('#logo-img');
+
+// navLogo.setAttribute('src', siteContent.nav['img-src']);
+
+// const addedItem1 = document.createElement("a");
+// addedItem1.textContent = "Test1";
+// addedItem1.href = "#";
+// nav.prepend(addedItem1);
+
+// const addedItem2 = document.createElement("a");
+// addedItem2.textContent = "Test2";
+// addedItem2.href = "#";
+// nav.appendChild(addedItem2);
+
+// const navLinks = Array.from(document.querySelectorAll("nav a"));
+
+// navLinks.forEach((link, index) => {
+//   if (index > 0 && index < 7) {
+//     link.textContent = siteContent.nav[`nav-item-${index}`];
+//     link.style.color = "green";
+//   } else {
+//     link.style.color = "green";
+//   }
+
+// const ctaImage = document.querySelector("#cta-img");
+// const ctaTitle = document.querySelector(".cta .cta-text h1");
+// const ctaButton = document.querySelector(".cta .cta-text button");
+  
+// ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+// const ctaMultiRow = siteContent.cta.h1.split(" ");
+// ctaTitle.innerHTML = `${ctaMultiRow[0]} <br/> ${ctaMultiRow[1]} <br/> ${ctaMultiRow[2]}`;
+// ctaButton.textContent = siteContent.cta.button;
+
+
+
+// // const servicesLink = document.createElement('a')
+// // servicesLink.textContent = 'Services';
+// // servicesLink.href = '#';
+// // document.querySelector('nav')
+
+// sectionMain.bottom.services.heading.textContent = siteContent["main-content"]["services-h4"];
+// sectionMain.bottom.services.description.textContent = siteContent["main-content"]["services-content"];
+// sectionMain.bottom.product.heading.textContent = siteContent["main-content"]["product-h4"];
+// sectionMain.bottom.product.description.textContent = siteContent["main-content"]["product-content"];
+// sectionMain.bottom.vision.heading.textContent = siteContent["main-content"]["vision-h4"];
+// sectionMain.bottom.vision.description.textContent = siteContent["main-content"]["vision-content"];
+
+const nav = document.querySelector("nav");
+const navLogo = document.querySelector("#logo-img");
+
+// Assign logo image to navLogo
+navLogo.setAttribute("src", siteContent.nav["img-src"]);
+
+
+const navLinks = Array.from(document.querySelectorAll("nav a"));
+
+
+navLinks.forEach((link, index) => {
+  if (index > 0 && index < 7) {
+    link.textContent = siteContent.nav[`nav-item-${index}`];
+    link.style.color = "green";
+  } else {
+    link.style.color = "green";
+  }
+});
+
+
+const ctaImage = document.querySelector("#cta-img");
+const ctaTitle = document.querySelector(".cta .cta-text h1");
+const ctaButton = document.querySelector(".cta .cta-text button");
+
+ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+const ctaMultiRow = siteContent.cta.h1.split(" ");
+ctaTitle.innerHTML = `${ctaMultiRow[0]} <br/> ${ctaMultiRow[1]} <br/> ${ctaMultiRow[2]}`;
+ctaButton.textContent = siteContent.cta.button;
+
+
+const sectionMain = {
+  top: {
+    features: {
+      heading: document.querySelector(".main-content .top-content .text-content:nth-of-type(1) h4"),
+      description: document.querySelector(".main-content .top-content .text-content:nth-of-type(1) p"),
+    },
+    about: {heading: document.querySelector(".main-content .top-content .text-content:nth-of-type(2) h4"),
+      description: document.querySelector(".main-content .top-content .text-content:nth-of-type(2) p"),
+    },
+  },
+  middle: {
+    image: document.querySelector("#middle-img"),
+  },
+  bottom: {
+    services: {
+      heading: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(1) h4"),
+      description: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(1) p"),
+    },
+    product: {
+      heading: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(2) h4"),
+      description: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(2) p"),
+    },
+    vision: {
+      heading: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(3) h4"),
+      description: document.querySelector(".main-content .bottom-content .text-content:nth-of-type(3) p"),
+    },
+  },
+};
+
+sectionMain.top.features.heading.textContent = siteContent["main-content"]["features-h4"];
+sectionMain.top.features.description.textContent = siteContent["main-content"]["features-content"];
+sectionMain.top.about.heading.textContent = siteContent["main-content"]["about-h4"];
+sectionMain.top.about.description.textContent = siteContent["main-content"]["about-content"];
+
+sectionMain.middle.image.setAttribute("src",siteContent["main-content"]["middle-img-src"]);
+
+sectionMain.bottom.services.heading.textContent = siteContent["main-content"]["services-h4"];
+sectionMain.bottom.services.description.textContent = siteContent["main-content"]["services-content"];
+sectionMain.bottom.product.heading.textContent = siteContent["main-content"]["product-h4"];
+sectionMain.bottom.product.description.textContent = siteContent["main-content"]["product-content"];
+sectionMain.bottom.vision.heading.textContent = siteContent["main-content"]["vision-h4"];
+sectionMain.bottom.vision.description.textContent = siteContent["main-content"]["vision-content"];
+
+
+const copyright = document.querySelector("footer p");
+copyright.textContent = siteContent.footer.copyright;
